@@ -1,10 +1,14 @@
-const express = require('express');
-const cors = require('cors');
+// ini sekali aja manggilnya
 require('dotenv').config();
 
-const app = express();
-const port = 3000;
+// connect to db
+require('./db')();
 
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 
